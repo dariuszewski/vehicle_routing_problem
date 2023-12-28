@@ -1,0 +1,14 @@
+# Byte-compiled files
+__pycache__/
+
+# Pytest cache
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Other
+key.txt

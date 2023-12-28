@@ -1,0 +1,875 @@
+[
+  {
+    "annotations": {
+      "DMS": {
+        "lat": "50\u00b0 3' 43.01064'' N",
+        "lng": "19\u00b0 56' 12.68304'' E"
+      },
+      "MGRS": "34UDA2390646059",
+      "Maidenhead": "JO90xb24ku",
+      "Mercator": { "x": 2219360.702, "y": 6424229.941 },
+      "NUTS": {
+        "NUTS0": { "code": "PL" },
+        "NUTS1": { "code": "PL2" },
+        "NUTS2": { "code": "PL21" },
+        "NUTS3": { "code": "PL213" }
+      },
+      "OSM": {
+        "edit_url": "https://www.openstreetmap.org/edit?relation=449696#map=16/50.06195/19.93686",
+        "note_url": "https://www.openstreetmap.org/note/new#map=16/50.06195/19.93686&layers=N",
+        "url": "https://www.openstreetmap.org/?mlat=50.06195&mlon=19.93686#map=16/50.06195/19.93686"
+      },
+      "UN_M49": {
+        "regions": {
+          "EASTERN_EUROPE": "151",
+          "EUROPE": "150",
+          "PL": "616",
+          "WORLD": "001"
+        },
+        "statistical_groupings": ["MEDC"]
+      },
+      "callingcode": 48,
+      "currency": {
+        "alternate_symbols": [],
+        "decimal_mark": ",",
+        "format": "%n %u",
+        "html_entity": "z&#322;",
+        "iso_code": "PLN",
+        "iso_numeric": "985",
+        "name": "Polish Z\u0142oty",
+        "smallest_denomination": 1,
+        "subunit": "Grosz",
+        "subunit_to_unit": 100,
+        "symbol": "z\u0142",
+        "symbol_first": 0,
+        "thousands_separator": " "
+      },
+      "flag": "\ud83c\uddf5\ud83c\uddf1",
+      "geohash": "u2yhv9mxfrms7mny82n6",
+      "qibla": 144.05,
+      "roadinfo": { "drive_on": "right", "speed_in": "km/h" },
+      "sun": {
+        "rise": {
+          "apparent": 1702708440,
+          "astronomical": 1702701240,
+          "civil": 1702706100,
+          "nautical": 1702703640
+        },
+        "set": {
+          "apparent": 1702737480,
+          "astronomical": 1702744620,
+          "civil": 1702739760,
+          "nautical": 1702742280
+        }
+      },
+      "timezone": {
+        "name": "Europe/Warsaw",
+        "now_in_dst": 0,
+        "offset_sec": 3600,
+        "offset_string": "+0100",
+        "short_name": "CET"
+      },
+      "what3words": { "words": "rail.elephant.pointer" },
+      "wikidata": "Q31487"
+    },
+    "bounds": {
+      "northeast": { "lat": 50.1261338, "lng": 20.2173455 },
+      "southwest": { "lat": 49.9676668, "lng": 19.7922355 }
+    },
+    "components": {
+      "ISO_3166-1_alpha-2": "PL",
+      "ISO_3166-1_alpha-3": "POL",
+      "ISO_3166-2": ["PL-12"],
+      "_category": "place",
+      "_type": "city",
+      "city": "Krakow",
+      "continent": "Europe",
+      "country": "Poland",
+      "country_code": "pl",
+      "political_union": "European Union",
+      "state": "Lesser Poland Voivodeship",
+      "state_code": "12"
+    },
+    "confidence": 4,
+    "formatted": "Krakow, Lesser Poland Voivodeship, Poland",
+    "geometry": { "lat": 50.0619474, "lng": 19.9368564 }
+  },
+  {
+    "annotations": {
+      "DMS": {
+        "lat": "50\u00b0 2' 48.99552'' N",
+        "lng": "19\u00b0 59' 49.75224'' E"
+      },
+      "MGRS": "34UDA2819944331",
+      "Maidenhead": "JO90xb91pg",
+      "Mercator": { "x": 2226072.938, "y": 6421635.738 },
+      "NUTS": {
+        "NUTS0": { "code": "PL" },
+        "NUTS1": { "code": "PL2" },
+        "NUTS2": { "code": "PL21" },
+        "NUTS3": { "code": "PL213" }
+      },
+      "OSM": {
+        "edit_url": "https://www.openstreetmap.org/edit?relation=2768921#map=16/50.04694/19.99715",
+        "note_url": "https://www.openstreetmap.org/note/new#map=16/50.04694/19.99715&layers=N",
+        "url": "https://www.openstreetmap.org/?mlat=50.04694&mlon=19.99715#map=16/50.04694/19.99715"
+      },
+      "UN_M49": {
+        "regions": {
+          "EASTERN_EUROPE": "151",
+          "EUROPE": "150",
+          "PL": "616",
+          "WORLD": "001"
+        },
+        "statistical_groupings": ["MEDC"]
+      },
+      "callingcode": 48,
+      "currency": {
+        "alternate_symbols": [],
+        "decimal_mark": ",",
+        "format": "%n %u",
+        "html_entity": "z&#322;",
+        "iso_code": "PLN",
+        "iso_numeric": "985",
+        "name": "Polish Z\u0142oty",
+        "smallest_denomination": 1,
+        "subunit": "Grosz",
+        "subunit_to_unit": 100,
+        "symbol": "z\u0142",
+        "symbol_first": 0,
+        "thousands_separator": " "
+      },
+      "flag": "\ud83c\uddf5\ud83c\uddf1",
+      "geohash": "u2yhxnc2x6qkfgbyk80b",
+      "qibla": 144.13,
+      "roadinfo": { "drive_on": "right", "speed_in": "km/h" },
+      "sun": {
+        "rise": {
+          "apparent": 1702708380,
+          "astronomical": 1702701240,
+          "civil": 1702706100,
+          "nautical": 1702703580
+        },
+        "set": {
+          "apparent": 1702737480,
+          "astronomical": 1702744620,
+          "civil": 1702739760,
+          "nautical": 1702742220
+        }
+      },
+      "timezone": {
+        "name": "Europe/Warsaw",
+        "now_in_dst": 0,
+        "offset_sec": 3600,
+        "offset_string": "+0100",
+        "short_name": "CET"
+      },
+      "what3words": { "words": "noises.reports.crate" },
+      "wikidata": "Q31487"
+    },
+    "bounds": {
+      "northeast": { "lat": 50.1261338, "lng": 20.2173455 },
+      "southwest": { "lat": 49.9676668, "lng": 19.7922355 }
+    },
+    "components": {
+      "ISO_3166-1_alpha-2": "PL",
+      "ISO_3166-1_alpha-3": "POL",
+      "ISO_3166-2": ["PL-12"],
+      "_category": "place",
+      "_type": "state",
+      "continent": "Europe",
+      "country": "Poland",
+      "country_code": "pl",
+      "political_union": "European Union",
+      "state": "Lesser Poland Voivodeship",
+      "state_code": "12"
+    },
+    "confidence": 4,
+    "formatted": "Lesser Poland Voivodeship, Poland",
+    "geometry": { "lat": 50.0469432, "lng": 19.9971534 }
+  },
+  {
+    "annotations": {
+      "DMS": {
+        "lat": "49\u00b0 14' 11.88852'' N",
+        "lng": "19\u00b0 52' 17.96052'' E"
+      },
+      "MGRS": "34UDV1786254374",
+      "Maidenhead": "JN99wf46ot",
+      "Mercator": { "x": 2212102.594, "y": 6282728.068 },
+      "NUTS": {
+        "NUTS0": { "code": "PL" },
+        "NUTS1": { "code": "PL2" },
+        "NUTS2": { "code": "PL21" },
+        "NUTS3": { "code": "PL219" }
+      },
+      "OSM": {
+        "edit_url": "https://www.openstreetmap.org/edit?way=1169289053#map=16/49.23664/19.87166",
+        "note_url": "https://www.openstreetmap.org/note/new#map=16/49.23664/19.87166&layers=N",
+        "url": "https://www.openstreetmap.org/?mlat=49.23664&mlon=19.87166#map=16/49.23664/19.87166"
+      },
+      "UN_M49": {
+        "regions": {
+          "EASTERN_EUROPE": "151",
+          "EUROPE": "150",
+          "PL": "616",
+          "WORLD": "001"
+        },
+        "statistical_groupings": ["MEDC"]
+      },
+      "callingcode": 48,
+      "currency": {
+        "alternate_symbols": [],
+        "decimal_mark": ",",
+        "format": "%n %u",
+        "html_entity": "z&#322;",
+        "iso_code": "PLN",
+        "iso_numeric": "985",
+        "name": "Polish Z\u0142oty",
+        "smallest_denomination": 1,
+        "subunit": "Grosz",
+        "subunit_to_unit": 100,
+        "symbol": "z\u0142",
+        "symbol_first": 0,
+        "thousands_separator": " "
+      },
+      "flag": "\ud83c\uddf5\ud83c\uddf1",
+      "geohash": "u2y0h5q05nhkq5mhuhxg",
+      "qibla": 143.17,
+      "roadinfo": { "drive_on": "right", "speed_in": "km/h" },
+      "sun": {
+        "rise": {
+          "apparent": 1702708200,
+          "astronomical": 1702701180,
+          "civil": 1702705980,
+          "nautical": 1702703520
+        },
+        "set": {
+          "apparent": 1702737720,
+          "astronomical": 1702744740,
+          "civil": 1702739940,
+          "nautical": 1702742400
+        }
+      },
+      "timezone": {
+        "name": "Europe/Warsaw",
+        "now_in_dst": 0,
+        "offset_sec": 3600,
+        "offset_string": "+0100",
+        "short_name": "CET"
+      },
+      "what3words": { "words": "wearying.third.intends" },
+      "wikidata": "Q9381338"
+    },
+    "bounds": {
+      "northeast": { "lat": 49.2409911, "lng": 19.8795448 },
+      "southwest": { "lat": 49.2328381, "lng": 19.8648486 }
+    },
+    "components": {
+      "ISO_3166-1_alpha-2": "PL",
+      "ISO_3166-1_alpha-3": "POL",
+      "ISO_3166-2": ["PL-12"],
+      "_category": "natural/water",
+      "_type": "valley",
+      "continent": "Europe",
+      "country": "Poland",
+      "country_code": "pl",
+      "county": "Tatra County",
+      "municipality": "gmina Ko\u015bcielisko",
+      "political_union": "European Union",
+      "state": "Lesser Poland Voivodeship",
+      "state_code": "12",
+      "valley": "W\u0105w\u00f3z Krak\u00f3w",
+      "village": "Ko\u015bcielisko"
+    },
+    "confidence": 9,
+    "formatted": "W\u0105w\u00f3z Krak\u00f3w, Ko\u015bcielisko, Tatra County, Poland",
+    "geometry": { "lat": 49.2366357, "lng": 19.8716557 }
+  },
+  {
+    "annotations": {
+      "DMS": {
+        "lat": "52\u00b0 21' 3.99996'' N",
+        "lng": "19\u00b0 56' 39.00012'' E"
+      },
+      "MGRS": "34UDD2808500615",
+      "Maidenhead": "JO92xi34hg",
+      "Mercator": { "x": 2220174.481, "y": 6830007.436 },
+      "NUTS": {
+        "NUTS0": { "code": "PL" },
+        "NUTS1": { "code": "PL9" },
+        "NUTS2": { "code": "PL92" },
+        "NUTS3": { "code": "PL923" }
+      },
+      "OSM": {
+        "edit_url": "https://www.openstreetmap.org/edit?node=3009717987#map=16/52.35111/19.94417",
+        "note_url": "https://www.openstreetmap.org/note/new#map=16/52.35111/19.94417&layers=N",
+        "url": "https://www.openstreetmap.org/?mlat=52.35111&mlon=19.94417#map=16/52.35111/19.94417"
+      },
+      "UN_M49": {
+        "regions": {
+          "EASTERN_EUROPE": "151",
+          "EUROPE": "150",
+          "PL": "616",
+          "WORLD": "001"
+        },
+        "statistical_groupings": ["MEDC"]
+      },
+      "callingcode": 48,
+      "currency": {
+        "alternate_symbols": [],
+        "decimal_mark": ",",
+        "format": "%n %u",
+        "html_entity": "z&#322;",
+        "iso_code": "PLN",
+        "iso_numeric": "985",
+        "name": "Polish Z\u0142oty",
+        "smallest_denomination": 1,
+        "subunit": "Grosz",
+        "subunit_to_unit": 100,
+        "symbol": "z\u0142",
+        "symbol_first": 0,
+        "thousands_separator": " "
+      },
+      "flag": "\ud83c\uddf5\ud83c\uddf1",
+      "geohash": "u3q1vf4zkf2tf103y16n",
+      "qibla": 146.04,
+      "roadinfo": { "drive_on": "right", "speed_in": "km/h" },
+      "sun": {
+        "rise": {
+          "apparent": 1702709100,
+          "astronomical": 1702701480,
+          "civil": 1702706640,
+          "nautical": 1702704000
+        },
+        "set": {
+          "apparent": 1702736760,
+          "astronomical": 1702744380,
+          "civil": 1702739280,
+          "nautical": 1702741920
+        }
+      },
+      "timezone": {
+        "name": "Europe/Warsaw",
+        "now_in_dst": 0,
+        "offset_sec": 3600,
+        "offset_string": "+0100",
+        "short_name": "CET"
+      },
+      "what3words": { "words": "quacking.passive.curses" }
+    },
+    "bounds": {
+      "northeast": { "lat": 52.3711111, "lng": 19.9641667 },
+      "southwest": { "lat": 52.3311111, "lng": 19.9241667 }
+    },
+    "components": {
+      "ISO_3166-1_alpha-2": "PL",
+      "ISO_3166-1_alpha-3": "POL",
+      "ISO_3166-2": ["PL-14"],
+      "_category": "place",
+      "_type": "hamlet",
+      "continent": "Europe",
+      "country": "Poland",
+      "country_code": "pl",
+      "county": "P\u0142ock County",
+      "hamlet": "Krak\u00f3w",
+      "municipality": "gmina S\u0142ubice",
+      "political_union": "European Union",
+      "postcode": "09-533",
+      "state": "Masovian Voivodeship",
+      "state_code": "14",
+      "village": "Potok Bia\u0142y"
+    },
+    "confidence": 7,
+    "formatted": "09-533 Potok Bia\u0142y, Poland",
+    "geometry": { "lat": 52.3511111, "lng": 19.9441667 }
+  },
+  {
+    "annotations": {
+      "DMS": {
+        "lat": "50\u00b0 57' 42.90696'' N",
+        "lng": "23\u00b0 34' 15.15468'' E"
+      },
+      "MGRS": "34UFB8053248737",
+      "Maidenhead": "KO10sx80mu",
+      "Mercator": { "x": 2623897.947, "y": 6581351.113 },
+      "NUTS": {
+        "NUTS0": { "code": "PL" },
+        "NUTS1": { "code": "PL8" },
+        "NUTS2": { "code": "PL81" },
+        "NUTS3": { "code": "PL812" }
+      },
+      "OSM": {
+        "edit_url": "https://www.openstreetmap.org/edit?node=3009717986#map=16/50.96192/23.57088",
+        "note_url": "https://www.openstreetmap.org/note/new#map=16/50.96192/23.57088&layers=N",
+        "url": "https://www.openstreetmap.org/?mlat=50.96192&mlon=23.57088#map=16/50.96192/23.57088"
+      },
+      "UN_M49": {
+        "regions": {
+          "EASTERN_EUROPE": "151",
+          "EUROPE": "150",
+          "PL": "616",
+          "WORLD": "001"
+        },
+        "statistical_groupings": ["MEDC"]
+      },
+      "callingcode": 48,
+      "currency": {
+        "alternate_symbols": [],
+        "decimal_mark": ",",
+        "format": "%n %u",
+        "html_entity": "z&#322;",
+        "iso_code": "PLN",
+        "iso_numeric": "985",
+        "name": "Polish Z\u0142oty",
+        "smallest_denomination": 1,
+        "subunit": "Grosz",
+        "subunit_to_unit": 100,
+        "symbol": "z\u0142",
+        "symbol_first": 0,
+        "thousands_separator": " "
+      },
+      "flag": "\ud83c\uddf5\ud83c\uddf1",
+      "geohash": "u90cbm7f9npjxz6p9b8w",
+      "qibla": 150.69,
+      "roadinfo": { "drive_on": "right", "speed_in": "km/h" },
+      "sun": {
+        "rise": {
+          "apparent": 1702707780,
+          "astronomical": 1702700460,
+          "civil": 1702705440,
+          "nautical": 1702702860
+        },
+        "set": {
+          "apparent": 1702736340,
+          "astronomical": 1702743660,
+          "civil": 1702738680,
+          "nautical": 1702741260
+        }
+      },
+      "timezone": {
+        "name": "Europe/Warsaw",
+        "now_in_dst": 0,
+        "offset_sec": 3600,
+        "offset_string": "+0100",
+        "short_name": "CET"
+      },
+      "what3words": { "words": "stilts.boiling.welds" }
+    },
+    "bounds": {
+      "northeast": { "lat": 50.9819186, "lng": 23.5908763 },
+      "southwest": { "lat": 50.9419186, "lng": 23.5508763 }
+    },
+    "components": {
+      "ISO_3166-1_alpha-2": "PL",
+      "ISO_3166-1_alpha-3": "POL",
+      "ISO_3166-2": ["PL-06"],
+      "_category": "place",
+      "_type": "hamlet",
+      "continent": "Europe",
+      "country": "Poland",
+      "country_code": "pl",
+      "county": "Che\u0142m County",
+      "hamlet": "Krak\u00f3w",
+      "municipality": "gmina Le\u015bniowice",
+      "political_union": "European Union",
+      "postcode": "22-120",
+      "state": "Lublin Voivodeship",
+      "state_code": "06",
+      "village": "Poniat\u00f3wka"
+    },
+    "confidence": 7,
+    "formatted": "22-120 Poniat\u00f3wka, Poland",
+    "geometry": { "lat": 50.9619186, "lng": 23.5708763 }
+  },
+  {
+    "annotations": {
+      "DMS": {
+        "lat": "52\u00b0 47' 9.99996'' N",
+        "lng": "20\u00b0 36' 0.00000'' E"
+      },
+      "MGRS": "34UDD7302348552",
+      "Maidenhead": "KO02hs28aq",
+      "Mercator": { "x": 2293181.51, "y": 6909479.885 },
+      "NUTS": {
+        "NUTS0": { "code": "PL" },
+        "NUTS1": { "code": "PL9" },
+        "NUTS2": { "code": "PL92" },
+        "NUTS3": { "code": "PL922" }
+      },
+      "OSM": {
+        "edit_url": "https://www.openstreetmap.org/edit?node=3009674809#map=16/52.78611/20.60000",
+        "note_url": "https://www.openstreetmap.org/note/new#map=16/52.78611/20.60000&layers=N",
+        "url": "https://www.openstreetmap.org/?mlat=52.78611&mlon=20.60000#map=16/52.78611/20.60000"
+      },
+      "UN_M49": {
+        "regions": {
+          "EASTERN_EUROPE": "151",
+          "EUROPE": "150",
+          "PL": "616",
+          "WORLD": "001"
+        },
+        "statistical_groupings": ["MEDC"]
+      },
+      "callingcode": 48,
+      "currency": {
+        "alternate_symbols": [],
+        "decimal_mark": ",",
+        "format": "%n %u",
+        "html_entity": "z&#322;",
+        "iso_code": "PLN",
+        "iso_numeric": "985",
+        "name": "Polish Z\u0142oty",
+        "smallest_denomination": 1,
+        "subunit": "Grosz",
+        "subunit_to_unit": 100,
+        "symbol": "z\u0142",
+        "symbol_first": 0,
+        "thousands_separator": " "
+      },
+      "flag": "\ud83c\uddf5\ud83c\uddf1",
+      "geohash": "u3qskc2mqu33f57nk05u",
+      "qibla": 147.39,
+      "roadinfo": { "drive_on": "right", "speed_in": "km/h" },
+      "sun": {
+        "rise": {
+          "apparent": 1702709100,
+          "astronomical": 1702701360,
+          "civil": 1702706580,
+          "nautical": 1702703880
+        },
+        "set": {
+          "apparent": 1702736460,
+          "astronomical": 1702744200,
+          "civil": 1702738980,
+          "nautical": 1702741680
+        }
+      },
+      "timezone": {
+        "name": "Europe/Warsaw",
+        "now_in_dst": 0,
+        "offset_sec": 3600,
+        "offset_string": "+0100",
+        "short_name": "CET"
+      },
+      "what3words": { "words": "plural.mash.handle" }
+    },
+    "bounds": {
+      "northeast": { "lat": 52.8061111, "lng": 20.62 },
+      "southwest": { "lat": 52.7661111, "lng": 20.58 }
+    },
+    "components": {
+      "ISO_3166-1_alpha-2": "PL",
+      "ISO_3166-1_alpha-3": "POL",
+      "ISO_3166-2": ["PL-14"],
+      "_category": "place",
+      "_type": "hamlet",
+      "continent": "Europe",
+      "country": "Poland",
+      "country_code": "pl",
+      "county": "Ciechan\u00f3w County",
+      "hamlet": "Krak\u00f3w",
+      "municipality": "gmina Ojrze\u0144",
+      "political_union": "European Union",
+      "state": "Masovian Voivodeship",
+      "state_code": "14",
+      "village": "Kraszewo"
+    },
+    "confidence": 7,
+    "formatted": "Kraszewo, Ciechan\u00f3w County, Poland",
+    "geometry": { "lat": 52.7861111, "lng": 20.6 }
+  },
+  {
+    "annotations": {
+      "DMS": {
+        "lat": "50\u00b0 6' 33.99984'' N",
+        "lng": "21\u00b0 8' 53.00016'' E"
+      },
+      "MGRS": "34UEA1058650809",
+      "Maidenhead": "KO00nc76sg",
+      "Mercator": { "x": 2354190.781, "y": 6432447.482 },
+      "NUTS": {
+        "NUTS0": { "code": "PL" },
+        "NUTS1": { "code": "PL2" },
+        "NUTS2": { "code": "PL21" },
+        "NUTS3": { "code": "PL217" }
+      },
+      "OSM": {
+        "edit_url": "https://www.openstreetmap.org/edit?node=3009717984#map=16/50.10944/21.14806",
+        "note_url": "https://www.openstreetmap.org/note/new#map=16/50.10944/21.14806&layers=N",
+        "url": "https://www.openstreetmap.org/?mlat=50.10944&mlon=21.14806#map=16/50.10944/21.14806"
+      },
+      "UN_M49": {
+        "regions": {
+          "EASTERN_EUROPE": "151",
+          "EUROPE": "150",
+          "PL": "616",
+          "WORLD": "001"
+        },
+        "statistical_groupings": ["MEDC"]
+      },
+      "callingcode": 48,
+      "currency": {
+        "alternate_symbols": [],
+        "decimal_mark": ",",
+        "format": "%n %u",
+        "html_entity": "z&#322;",
+        "iso_code": "PLN",
+        "iso_numeric": "985",
+        "name": "Polish Z\u0142oty",
+        "smallest_denomination": 1,
+        "subunit": "Grosz",
+        "subunit_to_unit": 100,
+        "symbol": "z\u0142",
+        "symbol_first": 0,
+        "thousands_separator": " "
+      },
+      "flag": "\ud83c\uddf5\ud83c\uddf1",
+      "geohash": "u2zj14ps9mmpn1dz4fwv",
+      "qibla": 146.02,
+      "roadinfo": { "drive_on": "right", "speed_in": "km/h" },
+      "sun": {
+        "rise": {
+          "apparent": 1702708140,
+          "astronomical": 1702701000,
+          "civil": 1702705800,
+          "nautical": 1702703340
+        },
+        "set": {
+          "apparent": 1702737180,
+          "astronomical": 1702744320,
+          "civil": 1702739460,
+          "nautical": 1702741980
+        }
+      },
+      "timezone": {
+        "name": "Europe/Warsaw",
+        "now_in_dst": 0,
+        "offset_sec": 3600,
+        "offset_string": "+0100",
+        "short_name": "CET"
+      },
+      "what3words": { "words": "barefoot.herbals.firework" }
+    },
+    "bounds": {
+      "northeast": { "lat": 50.1294444, "lng": 21.1680556 },
+      "southwest": { "lat": 50.0894444, "lng": 21.1280556 }
+    },
+    "components": {
+      "ISO_3166-1_alpha-2": "PL",
+      "ISO_3166-1_alpha-3": "POL",
+      "ISO_3166-2": ["PL-12"],
+      "_category": "place",
+      "_type": "hamlet",
+      "continent": "Europe",
+      "country": "Poland",
+      "country_code": "pl",
+      "county": "Tarn\u00f3w County",
+      "hamlet": "Krak\u00f3w",
+      "municipality": "gmina Lisia G\u00f3ra",
+      "political_union": "European Union",
+      "postcode": "33-151",
+      "state": "Lesser Poland Voivodeship",
+      "state_code": "12",
+      "village": "Nowa Jastrz\u0105bka"
+    },
+    "confidence": 7,
+    "formatted": "33-151 Nowa Jastrz\u0105bka, Poland",
+    "geometry": { "lat": 50.1094444, "lng": 21.1480556 }
+  },
+  {
+    "annotations": {
+      "DMS": {
+        "lat": "50\u00b0 16' 23.99988'' N",
+        "lng": "23\u00b0 9' 25.00020'' E"
+      },
+      "MGRS": "34UFA5369771247",
+      "Maidenhead": "KO10ng85uo",
+      "Mercator": { "x": 2577819.27, "y": 6460865.287 },
+      "NUTS": {
+        "NUTS0": { "code": "PL" },
+        "NUTS1": { "code": "PL8" },
+        "NUTS2": { "code": "PL82" },
+        "NUTS3": { "code": "PL822" }
+      },
+      "OSM": {
+        "edit_url": "https://www.openstreetmap.org/edit?node=3009717985#map=16/50.27333/23.15694",
+        "note_url": "https://www.openstreetmap.org/note/new#map=16/50.27333/23.15694&layers=N",
+        "url": "https://www.openstreetmap.org/?mlat=50.27333&mlon=23.15694#map=16/50.27333/23.15694"
+      },
+      "UN_M49": {
+        "regions": {
+          "EASTERN_EUROPE": "151",
+          "EUROPE": "150",
+          "PL": "616",
+          "WORLD": "001"
+        },
+        "statistical_groupings": ["MEDC"]
+      },
+      "callingcode": 48,
+      "currency": {
+        "alternate_symbols": [],
+        "decimal_mark": ",",
+        "format": "%n %u",
+        "html_entity": "z&#322;",
+        "iso_code": "PLN",
+        "iso_numeric": "985",
+        "name": "Polish Z\u0142oty",
+        "smallest_denomination": 1,
+        "subunit": "Grosz",
+        "subunit_to_unit": 100,
+        "symbol": "z\u0142",
+        "symbol_first": 0,
+        "thousands_separator": " "
+      },
+      "flag": "\ud83c\uddf5\ud83c\uddf1",
+      "geohash": "u8bmyzyr7ut66me0vjyj",
+      "qibla": 149.45,
+      "roadinfo": { "drive_on": "right", "speed_in": "km/h" },
+      "sun": {
+        "rise": {
+          "apparent": 1702707720,
+          "astronomical": 1702700520,
+          "civil": 1702705380,
+          "nautical": 1702702860
+        },
+        "set": {
+          "apparent": 1702736640,
+          "astronomical": 1702743840,
+          "civil": 1702738920,
+          "nautical": 1702741440
+        }
+      },
+      "timezone": {
+        "name": "Europe/Warsaw",
+        "now_in_dst": 0,
+        "offset_sec": 3600,
+        "offset_string": "+0100",
+        "short_name": "CET"
+      },
+      "what3words": { "words": "fixated.spacious.conga" }
+    },
+    "bounds": {
+      "northeast": { "lat": 50.2733833, "lng": 23.1569945 },
+      "southwest": { "lat": 50.2732833, "lng": 23.1568945 }
+    },
+    "components": {
+      "ISO_3166-1_alpha-2": "PL",
+      "ISO_3166-1_alpha-3": "POL",
+      "ISO_3166-2": ["PL-18"],
+      "_category": "building",
+      "_type": "building",
+      "continent": "Europe",
+      "country": "Poland",
+      "country_code": "pl",
+      "county": "Lubacz\u00f3w County",
+      "isolated_dwelling": "Krak\u00f3w",
+      "municipality": "gmina Cieszan\u00f3w",
+      "political_union": "European Union",
+      "postcode": "37-611",
+      "state": "Subcarpathian Voivodeship",
+      "state_code": "18",
+      "village": "Kowal\u00f3wka"
+    },
+    "confidence": 10,
+    "formatted": "Krak\u00f3w, 37-611 Kowal\u00f3wka, Poland",
+    "geometry": { "lat": 50.2733333, "lng": 23.1569445 }
+  },
+  {
+    "annotations": {
+      "DMS": {
+        "lat": "51\u00b0 43' 46.07616'' N",
+        "lng": "18\u00b0 30' 54.16020'' E"
+      },
+      "MGRS": "34UCC2839233871",
+      "Maidenhead": "JO91gr15tb",
+      "Mercator": { "x": 2061085.326, "y": 6717788.454 },
+      "NUTS": {
+        "NUTS0": { "code": "PL" },
+        "NUTS1": { "code": "PL7" },
+        "NUTS2": { "code": "PL71" },
+        "NUTS3": { "code": "PL714" }
+      },
+      "OSM": {
+        "edit_url": "https://www.openstreetmap.org/edit?node=529115964#map=16/51.72947/18.51504",
+        "note_url": "https://www.openstreetmap.org/note/new#map=16/51.72947/18.51504&layers=N",
+        "url": "https://www.openstreetmap.org/?mlat=51.72947&mlon=18.51504#map=16/51.72947/18.51504"
+      },
+      "UN_M49": {
+        "regions": {
+          "EASTERN_EUROPE": "151",
+          "EUROPE": "150",
+          "PL": "616",
+          "WORLD": "001"
+        },
+        "statistical_groupings": ["MEDC"]
+      },
+      "callingcode": 48,
+      "currency": {
+        "alternate_symbols": [],
+        "decimal_mark": ",",
+        "format": "%n %u",
+        "html_entity": "z&#322;",
+        "iso_code": "PLN",
+        "iso_numeric": "985",
+        "name": "Polish Z\u0142oty",
+        "smallest_denomination": 1,
+        "subunit": "Grosz",
+        "subunit_to_unit": 100,
+        "symbol": "z\u0142",
+        "symbol_first": 0,
+        "thousands_separator": " "
+      },
+      "flag": "\ud83c\uddf5\ud83c\uddf1",
+      "geohash": "u3jnm341zz3cfjf51769",
+      "qibla": 143.35,
+      "roadinfo": { "drive_on": "right", "speed_in": "km/h" },
+      "sun": {
+        "rise": {
+          "apparent": 1702709220,
+          "astronomical": 1702701780,
+          "civil": 1702706820,
+          "nautical": 1702704240
+        },
+        "set": {
+          "apparent": 1702737300,
+          "astronomical": 1702744800,
+          "civil": 1702739760,
+          "nautical": 1702742340
+        }
+      },
+      "timezone": {
+        "name": "Europe/Warsaw",
+        "now_in_dst": 0,
+        "offset_sec": 3600,
+        "offset_string": "+0100",
+        "short_name": "CET"
+      },
+      "what3words": { "words": "moderated.legions.rebutted" },
+      "wikidata": "Q6440563"
+    },
+    "bounds": {
+      "northeast": { "lat": 51.7494656, "lng": 18.5350445 },
+      "southwest": { "lat": 51.7094656, "lng": 18.4950445 }
+    },
+    "components": {
+      "ISO_3166-1_alpha-2": "PL",
+      "ISO_3166-1_alpha-3": "POL",
+      "ISO_3166-2": ["PL-10"],
+      "_category": "place",
+      "_type": "village",
+      "continent": "Europe",
+      "country": "Poland",
+      "country_code": "pl",
+      "county": "Sieradz County",
+      "municipality": "gmina Warta",
+      "political_union": "European Union",
+      "postcode": "98-290",
+      "state": "\u0141\u00f3dzkie Voivodship",
+      "village": "Kr\u0105k\u00f3w"
+    },
+    "confidence": 7,
+    "formatted": "98-290 Kr\u0105k\u00f3w, Poland",
+    "geometry": { "lat": 51.7294656, "lng": 18.5150445 }
+  }
+]

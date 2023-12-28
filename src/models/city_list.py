@@ -95,6 +95,19 @@ class CityList(Iterable):
         else: 
             return
     
+    def find_closest_neighbor(self, city):
+        non_depots = [n for n in self._items if not n.is_depot and not n.name == city.name]
+        random.shuffle(non_depots)
+        closest_neighbor = None
+        neighbor_distance = 9999999 # magic number
+        for neighbor in non_depots:
+            distance = city.calculate_distance_to(neighbor)
+            if distance < neighbor_distance:
+                closest_neighbor = neighbor
+                neighbor_distance = distance 
+        return closest_neighbor
+
+    
     def __repr__(self):
         rows = [city.to_dict() for city in self._items]
         df = pd.DataFrame(rows)
@@ -125,8 +138,10 @@ if __name__ == "__main__":
     # for city in city_list:
     #     print(city)
 
+    print(city_list.find_closest_neighbor(cities[0]))
     # Create CityList from a CSV file
     city_list_from_csv = CityList.from_csv("./src/temp/orders_with_depots.csv")
+
 
     # print(city_list_from_csv)
     # print(city_list_from_csv.depot_list)

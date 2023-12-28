@@ -11,7 +11,7 @@ except ImportError:
 
 
 class Fleet(Iterable):
-    def __init__(self, num_vehicles: int, vehicle_capacity: int, depot: City):
+    def __init__(self, num_vehicles: int, vehicle_capacity: int, depot: City, city_list=None):
         """
         Initialize a Fleet with a specified number of vehicles.
 
@@ -22,11 +22,12 @@ class Fleet(Iterable):
         
         State of the fleet is a solution of an algirithm.
         """
-        super().__init__(self.build_fleet(num_vehicles, vehicle_capacity, depot))
+        super().__init__(self.build_fleet(num_vehicles, vehicle_capacity, depot, city_list))
         self.vehicle_capacity = vehicle_capacity
         self.num_vehicles = num_vehicles
+        self.city_list = city_list
 
-    def build_fleet(self, num_vehicles: int, vehicle_capacity: int, depot: City) -> List[Vehicle]:
+    def build_fleet(self, num_vehicles: int, vehicle_capacity: int, depot: City, city_list) -> List[Vehicle]:
         """
         Build a fleet of vehicles.
 
@@ -60,7 +61,9 @@ class Fleet(Iterable):
         Returns:
             float: The total distance covered.
         """
-        return sum(vehicle.route_list.length for vehicle in self._items)
+        return round(
+            sum(vehicle.route_list.length for vehicle in self._items), 3
+        )
 
     def get_all_valid_routes(self) -> List[Any]:
         """
@@ -74,6 +77,25 @@ class Fleet(Iterable):
         for vehicle in self._items:
             routes.extend(vehicle.get_all_valid_routes())
         return routes
+
+    def get_all_routes(self) -> List[Any]:
+        """
+        Get all valid routes from all vehicles in the fleet. Valid route is
+        one which doesn't contain only depots.
+
+        Returns:
+            List[Any]: A list of all routes.
+        """
+        routes = []
+        for vehicle in self._items:
+            routes.extend(vehicle.route_list)
+        return routes
+    
+    def get_route_by_city(self, city):
+        routes = self.get_all_routes()
+        for route in routes:
+            if city in route:
+                return route
     
 
 if __name__ == "__main__":

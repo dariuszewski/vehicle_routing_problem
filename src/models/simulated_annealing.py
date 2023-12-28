@@ -50,8 +50,6 @@ class SimulatedAnnealing(Algorithm):
                                            process.
             current_best (Fleet)         : The current best solution found by 
                                            the algorithm.
-            current_best_solution (float): The distance covered by the current 
-                                           best solution.
             solutions_storage (list)     : List of solutions.
 
         The algorithm explores solutions at each temperature level, making a 
@@ -73,7 +71,6 @@ class SimulatedAnnealing(Algorithm):
         self.store_solutions = store_solutions
         self.solutions_storage = []
         self.current_best = self.initialize_solution()
-        self.current_best_solution = self.current_best.distance_covered
     
     def initialize_solution(self):
         # randomly shuffle solutions
@@ -94,58 +91,93 @@ class SimulatedAnnealing(Algorithm):
             vehicle.back_to_depot(self.city_list.random_depot) # back to closest depot? multiple depots is easy to implement with current code.
         # save solution if required
         if self.store_solutions:
-            self.solutions_storage.append(copy.copy(self.fleet))
+            self.solutions_storage.append(copy.deepcopy(self.fleet))
         return self.fleet
 
     def optimize(self):
         for _ in range(self.epochs):
             self.run_epoch()
-            self.temperature = round(self.temperature * self.alpha, 3)      
-        return self.current_best_solution
-
-    def store(self, solution):
-        if self.store_solutions:
-            self.solutions_storage.append(solution)
+            self.temperature = round(self.temperature * self.alpha, 2)      
+        return self.current_best.distance_covered
 
     def run_epoch(self):
         for _ in range(self.attempts):
-            new_solution = self.swap_cities()
-            if new_solution.distance_covered > self.current_best_solution:
+            new_solution = self.city_swap_annealing() # self.random_annealing() #self.nearest_neighbor_annealing() #self.run_attempt()
+            if new_solution.distance_covered < self.current_best.distance_covered:
+                print(1)
                 self.current_best = new_solution
             elif self.accept_worse_solution(new_solution):
+                print(2)
                 self.current_best = new_solution
             else:
+                print(3)
                 pass
             if self.store_solutions:
                 self.solutions_storage.append(self.current_best)
     
     def accept_worse_solution(self, new_solution):
         new_distance = new_solution.distance_covered
-        current_distance = self.current_best_solution
-        probability = exp(
-            round((current_distance - new_distance) / self.temperature, 2)
-            )
+        current_distance = self.current_best.distance_covered
+        exponent = -(abs(current_distance - new_distance) / self.temperature)
+        probability = exp(exponent)
         return probability > random.uniform(0, 1)
 
-    def swap_cities(self, counter=0):
-        if counter == 3:
-            raise BaseException('Cannot swap cities! There is a bug.')
-        # prepare copy of solution to avoid changing current best
-        new_fleet = copy.copy(self.fleet)
-        # randomly select 2 routes and 2 cities
-        all_routes = new_fleet.get_all_valid_routes()
-        route1, route2 = random.sample(all_routes, 2)
-        city1, city1_idx = self.select_random_city(route1)
-        city2, city2_idx = self.select_random_city(route2)
-        # swap cities
-        route1[city1_idx], route2[city2_idx] = city2, city1
-        # check routes feasibility
-        if (route1.order <= self.fleet[0].capacity) \
-            and (route1.order <= self.fleet[0].capacity):
-            return new_fleet
+    def nearest_neighbor_annealing(self):
+        # copy current best solution
+        fleet = copy.deepcopy(self.current_best)
+        # get a random city to optimize
+        all_routes = fleet.get_all_valid_routes()
+        route = random.choice(all_routes)
+        city, idx = self.select_random_city(route)
+        # find a nearest neighbor in km
+        neighbor = fleet.city_list.find_closest_neighbor(city)
+        neighbor_route = fleet.get_route_by_city(neighbor)
+        # allign city with it's neighbor
+        route.insert(idx , neighbor)
+        neighbor_route.remove(neighbor)
+        # check feasibility
+        if route.order <= fleet.vehicle_capacity:
+            # if feasible, return solution
+            return fleet
         else:
-            print('eohoooo')
-            self.swap_cities(counter=counter+1)
+            # if not feasible, go to the next attempt
+            return self.current_best
+    
+    def random_annealing(self):
+        # copy current best solution
+        fleet = copy.deepcopy(self.current_best)
+        # get 2 random cities
+        all_routes = fleet.get_all_valid_routes()
+        route1, route2 = random.sample(all_routes, 2)
+        _, city1_idx = self.select_random_city(route1)
+        city2, _ = self.select_random_city(route2)
+        # move city2 to route1
+        route1.insert(city1_idx , city2)
+        route2.remove(city2)
+        # check feasibility
+        if route1.order <= fleet.vehicle_capacity:
+            # if feasible, return solution
+            return fleet
+        else:
+            # if not feasible, go to the next attempt
+            return self.current_best
+        
+    def city_swap_annealing(self):
+        # copy current best solution
+        fleet = copy.deepcopy(self.current_best)
+        # get 2 random cities
+        all_routes = fleet.get_all_valid_routes()
+        route1, route2 = random.sample(all_routes, 2)
+        city1, idx1 = self.select_random_city(route1)
+        city2, idx2 = self.select_random_city(route2)
+        # perform swap
+        route1[idx1], route2[idx2] = city2, city1
+        # check feasibility
+        cap = fleet.vehicle_capacity
+        if route1.order <= cap and route2.order <= cap:
+            return fleet
+        else:
+            return self.current_best 
             
     def select_random_city(self, route):
         choices = [city for city in route if not city.is_depot]
@@ -165,7 +197,7 @@ class SimulatedAnnealing(Algorithm):
             f"Fleet size           : {len(self.fleet)}",
             f"Vehicle Capacity     : {self.fleet[0].capacity}",
             f"Cities               : {num_cities} with {num_depots} depots.",
-            f"Current Shortest     : {self.current_best_solution}",
+            f"Current Shortest     : {self.current_best.distance_covered}",
             '---------------------------------------------------',
         ])
 
@@ -175,16 +207,18 @@ if __name__ == "__main__":
     print(city_list)
 
     depot = city_list.depot
-    fleet = Fleet(num_vehicles=5, vehicle_capacity=1000, depot=depot)
+    fleet = Fleet(num_vehicles=5, vehicle_capacity=1000, depot=depot, city_list=city_list)
     print(fleet)
     
     SA = SimulatedAnnealing(
-        fleet=fleet, city_list=city_list, epochs=5, attempts=3, initial_temp=1, 
-        cooling_rate=0.9
+        fleet=fleet, city_list=city_list, epochs=5, attempts=3, initial_temp=1000, 
+        cooling_rate=0.9, store_solutions=True
     )
 
     print(SA)
     SA.optimize()
     print(SA)
+    for s in SA.solutions_storage:
+        print(s.distance_covered)
 
     

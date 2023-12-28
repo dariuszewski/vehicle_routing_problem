@@ -34,7 +34,7 @@ class Vehicle():
         else:
             depot = city_list.random_depot
             self.visit_depot(depot)
-            self.route_list.add_city(depot)
+            self.deliver_order(city, city_list)
     
     def get_all_valid_routes(self):
         return self.route_list.get_all_valid_routes()

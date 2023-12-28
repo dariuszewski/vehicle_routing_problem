@@ -29,5 +29,11 @@ class Iterable(ABC):
                 return i
         raise ValueError(f"{item} is not in the route")
 
+    def insert(self, index, item):
+        self._items.insert(index, item)
+    
+    def remove(self, item):
+        self._items.remove(item)
+
     def append(self, item: Any) -> None:
         self._items.append(item)

@@ -43,12 +43,3 @@ def test_add_city():
     assert len(route) == 2
     assert route[1] == city1
 
-def test_route_is_completed():
-    incomplete_route = Route.from_list([depot, city1])  # Does not end with a depot
-    assert not incomplete_route.is_completed
-
-    completed_route = Route.from_list([depot, city1, depot])  # Ends with a depot
-    assert completed_route.is_completed
-
-    empty_route = Route(depot)  # Just a depot (not a valid route, but technically completed)
-    assert empty_route.is_completed

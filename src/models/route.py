@@ -49,12 +49,6 @@ class Route(Iterable):
             distance = self._items[i].calculate_distance_to(self._items[i+1])
             total_distance += distance
         return total_distance
-
-    # def remove(self, city):
-    #     for item in self._items:
-    #         if city.name == item.name:
-    #             self._items.remove(item)
-    #             return
     
     @property
     def is_empty(self) -> bool:
@@ -65,16 +59,6 @@ class Route(Iterable):
             bool: True if route is empty.
         """
         return self.length <= 0
-    
-    @property
-    def is_completed(self) -> bool:
-        """
-        Check if route is completes.
-
-        Returns:
-            bool: True if route is completed.
-        """
-        return self._items[0].is_depot and self._items[-1].is_depot
     
     @property
     def order(self) -> int:

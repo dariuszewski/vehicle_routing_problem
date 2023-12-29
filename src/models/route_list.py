@@ -116,7 +116,6 @@ if __name__ == "__main__":
     route_list.add_city(city1)
 
     # Complete the current route and start a new one
-    # route_list.complete_route(depot)
     new_route = Route(depot)
     route_list.add_route(new_route)
     print(route_list)
@@ -125,8 +124,6 @@ if __name__ == "__main__":
     route_list.add_city(city2)
     route_list.add_city(city3)
 
-    # Complete the new route
-    # route_list.complete_route(depot)
 
     # Print the route list details
     print("Route List Details:")

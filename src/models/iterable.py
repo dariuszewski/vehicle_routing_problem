@@ -37,3 +37,9 @@ class Iterable(ABC):
 
     def append(self, item: Any) -> None:
         self._items.append(item)
+
+    def pop(self):
+        self._items.pop()
+
+    def reverse(self):
+        self._items.reverse()

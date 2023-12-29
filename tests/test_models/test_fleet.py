@@ -2,50 +2,32 @@ import pytest
 from src.models.fleet import Fleet
 from src.models.vehicle import Vehicle
 from src.models.city import City
-from src.models.route import Route
+from src.models.city_list import CityList
 
-# Sample data for testing
-depot = City("Depot", 0, 42.0, -77.0, True)
-city1 = City("City1", 10, 40.0, -75.0, False)
-city2 = City("City2", 15, 41.0, -76.0, False)
 
-def test_fleet_initialization():
-    fleet = Fleet(2, 25, depot)
-    assert len(fleet) == 2
-    for vehicle in fleet:
-        assert vehicle.capacity == 25
-        assert vehicle.depot == depot
+@pytest.fixture
+def sample_city_list():
+    return CityList.from_csv('./temp/orders_multiple_depots.csv')
 
-def test_fleet_from_list():
-    vehicles = [Vehicle(25, depot), Vehicle(30, depot)]
-    fleet = Fleet.from_list(vehicles)
-    assert len(fleet) == 2
-    for vehicle in fleet:
-        assert vehicle in vehicles
+@pytest.fixture
+def sample_fleet(sample_city_list):
+    # Create a sample Fleet for testing
+    depot = sample_city_list.depot
+    return Fleet(3, 100, sample_city_list, depot)
 
-def test_distance_covered():
-    vehicle1 = Vehicle(25, depot)
-    vehicle1.deliver_order(city1, None)  # Assuming this adds a route to the vehicle
-    vehicle2 = Vehicle(25, depot)
-    vehicle2.deliver_order(city2, None)
-
-    fleet = Fleet.from_list([vehicle1, vehicle2])
-    assert fleet.distance_covered >= 0
-
-def test_get_all_routes():
-    vehicle = Vehicle(25, depot)
-    vehicle.deliver_order(city1, None)
-    fleet = Fleet.from_list([vehicle])
-    routes = fleet.get_all_routes()
-    assert len(routes) >= 1
-    for route in routes:
-        assert isinstance(route, Route)
-
-def test_fleet_iterable():
-    fleet = Fleet(2, 25, depot)
+def test_build_fleet(sample_city_list):
+    fleet = Fleet(3, 100, sample_city_list)
+    assert len(fleet) == 3
     assert all(isinstance(vehicle, Vehicle) for vehicle in fleet)
 
-def test_fleet_indexing():
-    fleet = Fleet(2, 25, depot)
-    assert isinstance(fleet[0], Vehicle)
-    assert isinstance(fleet[1], Vehicle)
+def test_get_all_valid_routes(sample_fleet):
+    valid_routes = sample_fleet.get_all_valid_routes()
+    assert isinstance(valid_routes, list)
+    # Add more checks based on what you define as a 'valid route'
+
+def test_get_route_by_city(sample_fleet):
+    city = sample_fleet.city_list[0]  # Assuming this city is in one of the routes
+    route = sample_fleet.get_route_by_city(city)
+    assert city in route
+
+

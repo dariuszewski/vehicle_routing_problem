@@ -3,43 +3,53 @@ from typing import Any, List
 try:
     from src.models.iterable import Iterable
     from src.models.vehicle import Vehicle
+    from src.models.city_list import CityList
     from src.models.city import City
 except ImportError:
     from iterable import Iterable
     from vehicle import Vehicle
+    from city_list import CityList
     from city import City
 
 
 class Fleet(Iterable):
-    def __init__(self, num_vehicles: int, vehicle_capacity: int, depot: City, city_list=None):
+    def __init__(self, num_vehicles: int, vehicle_capacity: int, 
+                 city_list: CityList, depot: City = None):
         """
         Initialize a Fleet with a specified number of vehicles.
-
         Args:
             num_vehicles (int): The number of vehicles in the fleet.
             vehicle_capacity (int): The capacity of each vehicle in the fleet.
-            depot (City): The depot city where all vehicles start.
-        
+            city_list (CityList): List of cities to which the fleet delivers.
+        Optional:
+            depot (City): The depot city where all vehicles start. If not 
+                          provided, it will be set as a random depot from the
+                          city_list
         State of the fleet is a solution of an algirithm.
         """
-        super().__init__(self.build_fleet(num_vehicles, vehicle_capacity, depot, city_list))
+        super().__init__(self.build_fleet(
+            vehicle_capacity=vehicle_capacity,
+            num_vehicles=num_vehicles,
+            city_list=city_list,
+            depot=depot,
+        ))
         self.vehicle_capacity = vehicle_capacity
         self.num_vehicles = num_vehicles
         self.city_list = city_list
+        self.depot = depot or city_list.depot
 
-    def build_fleet(self, num_vehicles: int, vehicle_capacity: int, depot: City, city_list) -> List[Vehicle]:
+    def build_fleet(self, vehicle_capacity, num_vehicles,
+                    city_list, depot=None) -> List[Vehicle]:
         """
         Build a fleet of vehicles.
-
-        Args:
-            num_vehicles (int): The number of vehicles to create.
-            vehicle_capacity (int): The capacity of each vehicle.
-            depot (City): The depot city for each vehicle.
-
         Returns:
             List[Vehicle]: A list of vehicles.
         """
-        return [Vehicle(capacity=vehicle_capacity, depot=depot) for _ in range(num_vehicles)]
+        depot = depot or city_list.depot
+        return [Vehicle(
+            capacity=vehicle_capacity,
+            depot=depot
+        ) for _ in range(num_vehicles)]
     
     @classmethod
     def from_list(cls, items: List[Vehicle]) -> 'Fleet':
@@ -57,9 +67,6 @@ class Fleet(Iterable):
     def distance_covered(self) -> float:
         """
         Calculate the total distance covered by all vehicles in the fleet.
-
-        Returns:
-            float: The total distance covered.
         """
         return round(
             sum(vehicle.route_list.length for vehicle in self._items), 3
@@ -69,9 +76,6 @@ class Fleet(Iterable):
         """
         Get all valid routes from all vehicles in the fleet. Valid route is
         one which doesn't contain only depots.
-
-        Returns:
-            List[Any]: A list of all routes.
         """
         routes = []
         for vehicle in self._items:
@@ -97,6 +101,10 @@ class Fleet(Iterable):
             if city in route:
                 return route
     
+    def get_vehicle_by_route(self, route):
+        for vehicle in self._items:
+            if route in vehicle.route_list:
+                return vehicle
 
 if __name__ == "__main__":
     # Assuming you have a list of Vehicle instances

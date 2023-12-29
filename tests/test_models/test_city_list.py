@@ -1,40 +1,33 @@
 import pytest
 from src.models.city_list import CityList
 from src.models.city import City
-from unittest.mock import mock_open, patch
 
-# Sample data for testing
-sample_dicts = [
-    {"name": "City1", "order": 100, "lat": 50.0, "lon": 20.0, "is_depot": False},
-    {"name": "Depot", "order": 0, "lat": 51.0, "lon": 21.0, "is_depot": True}
-]
 
-sample_csv_data = """city,order,latitude,longitude
-City1,100,50.0,20.0
-Depot,0,51.0,21.0
-"""
+@pytest.fixture
+def city_list():
+    return CityList.from_csv('./temp/orders_multiple_depots.csv')
 
-def test_from_dict_list():
-    city_list = CityList.from_dict_list(sample_dicts)
-    assert len(city_list) == 2
+# Test for creating CityList from CSV
+def test_city_list_from_csv(city_list):
+    assert len(city_list) == 31  # Assuming 31 cities in CSV
     assert isinstance(city_list[0], City)
-    assert city_list[1].is_depot
 
-def test_from_csv():
-    with patch("builtins.open", mock_open(read_data=sample_csv_data)):
-        city_list = CityList.from_csv("dummy.csv", ["Depot"])
-    assert len(city_list) == 2
-    assert city_list[0].name == "City1"
-    assert city_list[1].is_depot
+# Test for finding the nearest neighbor
+def test_find_nearest_neighbor(city_list):
+    city1 = city_list[5]
+    nearest_neighbor = city_list.find_nearest_neighbor(city1)
+    assert nearest_neighbor.name != city1.name  # Ensure it's a different city
+    assert not nearest_neighbor.is_depot       # Ensure it's not a depot
 
-def test_depot_list():
-    city_list = CityList.from_dict_list(sample_dicts)
-    depots = city_list.depot_list
-    assert len(depots) == 1
-    assert depots[0].name == "Depot"
+# Test for finding the nearest depot
+def test_find_nearest_depot(city_list):
+    city1 = city_list[5]
+    nearest_depot = city_list.find_nearest_depot(city1)
+    assert nearest_depot.is_depot  # Ensure it's a depot
 
-def test_depot():
-    city_list = CityList.from_dict_list(sample_dicts)
+# Test for depot property
+def test_depot_property(city_list):
     depot = city_list.depot
-    assert depot.name == "Depot"
-    assert depot.is_depot
+    assert depot.is_depot  # Ensure it returns a depot
+
+# You can add more tests for other methods or edge cases as needed.

@@ -21,7 +21,6 @@ class City():
         self.lon = lon
         self.is_depot = is_depot
 
-
     def calculate_distance_to(self, other):
         """
         Calclulates distance to another city using Haversine formula.
@@ -43,15 +42,6 @@ class City():
         c = 2 * asin(sqrt(a))
         r = 6371 # Radius of Earth in kilometers
         return c * r
-
-    def to_dict(self):
-        return {
-            'city': self.name,
-            'lat': self.lat,
-            'lon': self.lon,
-            'order': self.order,
-            'is_depot': self.is_depot
-        }
 
     def __repr__(self):
         return f"<City: {self.name}, order: {self.order}, is_depot: {self.is_depot}>"

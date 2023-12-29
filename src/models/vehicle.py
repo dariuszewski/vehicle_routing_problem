@@ -23,18 +23,18 @@ class Vehicle():
         self.route_list.add_route(Route(depot))
         self.trunk = self.capacity
     
-    def back_to_depot(self, depot):
-        self.route_list.add_city(depot)
+    def back_to_depot(self, depot_promise):
+        self.route_list.add_city(depot_promise())
         self.trunk = self.capacity
 
-    def deliver_order(self, city, city_list):
+    def deliver_order(self, city, depot_promise):
         if self.can_deliver_order(city):
             self.trunk -= city.order
             self.route_list.add_city(city)
         else:
-            depot = city_list.random_depot
-            self.visit_depot(depot)
-            self.deliver_order(city, city_list)
+            # depot = city_list.depot # how to remove this from here?
+            self.visit_depot(depot_promise())
+            self.deliver_order(city, depot_promise)
     
     def get_all_valid_routes(self):
         return self.route_list.get_all_valid_routes()
@@ -47,11 +47,12 @@ class Vehicle():
     def distance_travelled(self):
         return self.route_list.length
     
+    
     def __str__(self):
-        return f'<Vehicle: capacity: {self.trunk}/{self.capacity}, position: {self.position}, travel: {self.distance_travelled} >'
+        return f'<Vehicle: id: {id(self)} position: {self.position}, travel: {round(self.distance_travelled, 3)} >'
     
     def __repr__(self):
-        return f'<Vehicle: capacity: {self.trunk}/{self.capacity}, position: {self.position}, travel: {self.distance_travelled} >'
+        return f'<Vehicle: capacity: {self.trunk}/{self.capacity}, position: {self.position}, travel: {round(self.distance_travelled, 3)} >'
     
 
 if __name__ == "__main__":

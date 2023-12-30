@@ -1,4 +1,3 @@
-# IT IS HERE ONLY FOR CONVIENIENCE DURING DEVELOPMENT!!!
 import random
 import copy
 from math import exp
@@ -141,6 +140,7 @@ class SimulatedAnnealing(Algorithm):
         probability = exp(exponent)
         treshold = random.uniform(0, 1)
         return probability > treshold
+        
 
     def nearest_neighbor_annealing(self):
         # copy current best solution
@@ -158,6 +158,8 @@ class SimulatedAnnealing(Algorithm):
         # check feasibility
         if route.order <= fleet.vehicle_capacity:
             # if feasible, return solution
+            vehicle = fleet.get_vehicle_by_route(neighbor_route)
+            vehicle.consolidate_route(neighbor_route)
             return fleet
         else:
             # if not feasible, go to the next attempt
@@ -211,6 +213,7 @@ class SimulatedAnnealing(Algorithm):
         num_depots = len([d for d in self.fleet.city_list if d.is_depot]) 
         return ('\n').join([
             '-----------Simulated Annealing Algorithm-----------',
+            f'Anneling Method      : {self.annealing_method}',
             f'Current Temperature  : {self.temperature}',
             f'Initial Temperature  : {self.initial_temp}',
             f'Cooling Factor       : {self.alpha}',

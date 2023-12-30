@@ -78,6 +78,9 @@ class Route(Iterable):
             city (City): The city to add.
         """
         self._items.append(city)
+        
+    def merge_routes(self, other):
+        self._items = self._items[:-1] + other._items[1:]
 
     def __str__(self):
         order_str = f"Order: {self.order}"

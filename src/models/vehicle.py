@@ -47,7 +47,15 @@ class Vehicle():
     def distance_travelled(self):
         return self.route_list.length
     
-    
+    def consolidate_route(self, route):
+        to_be_removed = []
+        for item in self.route_list:
+            if item != route and item.order + route.order < self.capacity:
+                route.merge_routes(item)
+                to_be_removed.append(item)
+        for item in to_be_removed:
+            self.route_list.remove(item)
+                
     def __str__(self):
         return f'<Vehicle: id: {id(self)} position: {self.position}, travel: {round(self.distance_travelled, 3)} >'
     

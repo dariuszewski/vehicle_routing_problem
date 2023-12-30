@@ -106,6 +106,7 @@ class Fleet(Iterable):
             if route in vehicle.route_list:
                 return vehicle
 
+
 if __name__ == "__main__":
     # Assuming you have a list of Vehicle instances
     depot = City("Depot", 0, 40.7128, -74.0060, True) 

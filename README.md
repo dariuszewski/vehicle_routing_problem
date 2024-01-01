@@ -1,5 +1,14 @@
 This repository implements metaheuristic solution to the 
 vehicle routing problem using simmulated anneling algorithm.
 
+## Development
+Setup virtual environment for the project
+```
+$ pip install virtualenv
+$ python -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirments.txt
+```
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+Run unit tests with: `pytest tests/`  
+Run code formatter with: `black .`

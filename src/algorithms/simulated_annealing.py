@@ -237,7 +237,7 @@ class SimulatedAnnealing(Algorithm):
 
 
 if __name__ == "__main__":
-    csv_path = "./temp/orders_multiple_depots.csv"
+    csv_path = "./data/orders_multiple_depots.csv"
     city_list = CityList.from_csv(city_file=csv_path)
     print(city_list)
 

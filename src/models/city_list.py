@@ -106,4 +106,4 @@ if __name__ == "__main__":
     depots = city_list.depot
     print(depots)
 
-    city_list_from_csv = CityList.from_csv("./temp/orders_with_depots.csv")
+    city_list_from_csv = CityList.from_csv("./data/orders_with_depots.csv")

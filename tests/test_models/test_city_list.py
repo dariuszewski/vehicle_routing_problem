@@ -5,7 +5,7 @@ from src.models.city import City
 
 @pytest.fixture
 def city_list():
-    return CityList.from_csv("./temp/orders_multiple_depots.csv")
+    return CityList.from_csv("./data/orders_multiple_depots.csv")
 
 
 # Test for creating CityList from CSV

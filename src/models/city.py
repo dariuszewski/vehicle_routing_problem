@@ -1,10 +1,10 @@
 from math import radians, sin, asin, cos, sqrt
 
-    
-class City():
+
+class City:
     def __init__(
-            self, name: str, order: int, lat: float, lon: float, is_depot: bool
-            ) -> None:
+        self, name: str, order: int, lat: float, lon: float, is_depot: bool
+    ) -> None:
         """
         Initialize a new City instance.
 
@@ -29,18 +29,18 @@ class City():
         other (City): The other city to which the distance is calculated.
 
         Returns:
-        float: The distance to the other city in kilometers.    
+        float: The distance to the other city in kilometers.
         """
         # Convert decimal degrees to radians
         lon1, lat1, lon2, lat2 = map(
             radians, [self.lon, self.lat, other.lon, other.lat]
-            )
+        )
         # Haversine formula
         dlon = lon2 - lon1
         dlat = lat2 - lat1
-        a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+        a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
         c = 2 * asin(sqrt(a))
-        r = 6371 # Radius of Earth in kilometers
+        r = 6371  # Radius of Earth in kilometers
         return c * r
 
     def __repr__(self):

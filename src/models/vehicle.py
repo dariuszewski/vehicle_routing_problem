@@ -8,7 +8,7 @@ except ImportError:
     from city_list import CityList
 
 
-class Vehicle(): 
+class Vehicle:
     def __init__(self, capacity, depot):
         self.capacity = capacity
         self.trunk = capacity
@@ -17,12 +17,12 @@ class Vehicle():
 
     def can_deliver_order(self, city):
         return self.trunk >= city.order
-    
+
     def visit_depot(self, depot):
         self.route_list.add_city(depot)
         self.route_list.add_route(Route(depot))
         self.trunk = self.capacity
-    
+
     def back_to_depot(self, depot_promise):
         self.route_list.add_city(depot_promise())
         self.trunk = self.capacity
@@ -35,18 +35,18 @@ class Vehicle():
             # depot = city_list.depot # how to remove this from here?
             self.visit_depot(depot_promise())
             self.deliver_order(city, depot_promise)
-    
+
     def get_all_valid_routes(self):
         return self.route_list.get_all_valid_routes()
 
     @property
     def position(self):
         return self.route_list.last_city
-    
+
     @property
     def distance_travelled(self):
         return self.route_list.length
-    
+
     def consolidate_route(self, route):
         to_be_removed = []
         for item in self.route_list:
@@ -55,13 +55,13 @@ class Vehicle():
                 to_be_removed.append(item)
         for item in to_be_removed:
             self.route_list.remove(item)
-                
+
     def __str__(self):
-        return f'<Vehicle: id: {id(self)} position: {self.position}, travel: {round(self.distance_travelled, 3)} >'
-    
+        return f"<Vehicle: id: {id(self)} position: {self.position}, travel: {round(self.distance_travelled, 3)} >"
+
     def __repr__(self):
-        return f'<Vehicle: capacity: {self.trunk}/{self.capacity}, position: {self.position}, travel: {round(self.distance_travelled, 3)} >'
-    
+        return f"<Vehicle: capacity: {self.trunk}/{self.capacity}, position: {self.position}, travel: {round(self.distance_travelled, 3)} >"
+
 
 if __name__ == "__main__":
     # Create City and Depot instances
@@ -72,13 +72,33 @@ if __name__ == "__main__":
     city3 = City("City3", 30, 39.0, -74.0, False)
 
     # Create a CityList including the depots and cities
-    city_list = CityList.from_dict_list([
-        {"name": "Depot1", "order": 0, "lat": 42.0, "lon": -77.0, "is_depot": True},
-        {"name": "Depot2", "order": 0, "lat": 43.0, "lon": -78.0, "is_depot": True},
-        {"name": "City1", "order": 10, "lat": 40.0, "lon": -75.0, "is_depot": False},
-        {"name": "City2", "order": 20, "lat": 41.0, "lon": -76.0, "is_depot": False},
-        {"name": "City3", "order": 30, "lat": 39.0, "lon": -74.0, "is_depot": False},
-    ])
+    city_list = CityList.from_dict_list(
+        [
+            {"name": "Depot1", "order": 0, "lat": 42.0, "lon": -77.0, "is_depot": True},
+            {"name": "Depot2", "order": 0, "lat": 43.0, "lon": -78.0, "is_depot": True},
+            {
+                "name": "City1",
+                "order": 10,
+                "lat": 40.0,
+                "lon": -75.0,
+                "is_depot": False,
+            },
+            {
+                "name": "City2",
+                "order": 20,
+                "lat": 41.0,
+                "lon": -76.0,
+                "is_depot": False,
+            },
+            {
+                "name": "City3",
+                "order": 30,
+                "lat": 39.0,
+                "lon": -74.0,
+                "is_depot": False,
+            },
+        ]
+    )
 
     # Initialize a Vehicle with a capacity and a starting depot
     vehicle = Vehicle(25, depot1)

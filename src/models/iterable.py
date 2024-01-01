@@ -1,10 +1,12 @@
 from typing import Any, List, Iterator
 from abc import ABC, abstractmethod
 
+
 class Iterable(ABC):
     """
-    Abstract base class. Provides basic interface for custom iterables. 
+    Abstract base class. Provides basic interface for custom iterables.
     """
+
     def __init__(self, items: List[Any] = []):
         self._items = items
 
@@ -22,7 +24,7 @@ class Iterable(ABC):
 
     def __str__(self) -> str:
         return str(self._items)
-    
+
     def index(self, item) -> Any:
         for i, city in enumerate(self._items):
             if city == item:
@@ -31,7 +33,7 @@ class Iterable(ABC):
 
     def insert(self, index, item):
         self._items.insert(index, item)
-    
+
     def remove(self, item):
         self._items.remove(item)
 

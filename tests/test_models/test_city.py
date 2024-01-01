@@ -13,12 +13,10 @@ def test_city_initialization():
 
 
 def test_calculate_distance_to():
-    krakow = City(name="Kraków", order=50, lat=50.0647, lon=19.9450, 
-                  is_depot=False)
-    warsaw = City(name="Warszawa", order=50, lat=52.2297, lon=21.0122, 
-                  is_depot=False)
+    krakow = City(name="Kraków", order=50, lat=50.0647, lon=19.9450, is_depot=False)
+    warsaw = City(name="Warszawa", order=50, lat=52.2297, lon=21.0122, is_depot=False)
 
     distance = krakow.calculate_distance_to(warsaw)
-    
+
     # The distance is approximately 252 kilometers
     assert distance == pytest.approx(252, rel=1e-3)

@@ -9,6 +9,7 @@ except:
     from route import Route
     from city import City
 
+
 class RouteList(Iterable):
     def __init__(self, route: Route):
         """
@@ -84,7 +85,7 @@ class RouteList(Iterable):
         """
         if self.last and (not self.last.is_empty) and (self.last_city != depot):
             self.last.add_city(depot)
-    
+
     def get_all_valid_routes(self):
         valid_routes = []
         for route in self._items:
@@ -97,6 +98,7 @@ class RouteList(Iterable):
 
     def __repr__(self) -> str:
         return f"<RouteList: {len(self._items)} routes>"
+
 
 if __name__ == "__main__":
     # Create some City instances
@@ -112,7 +114,7 @@ if __name__ == "__main__":
     route_list = RouteList(initial_route)
 
     # Add a city to the current route
-    print('here')
+    print("here")
     route_list.add_city(city1)
 
     # Complete the current route and start a new one
@@ -123,7 +125,6 @@ if __name__ == "__main__":
     # Add more cities to the new route
     route_list.add_city(city2)
     route_list.add_city(city3)
-
 
     # Print the route list details
     print("Route List Details:")

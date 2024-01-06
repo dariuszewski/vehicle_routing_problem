@@ -28,7 +28,7 @@ class GraphManager():
 
     def create_cycles(self):
         non_depots = [node for node in self.node_list if not node.is_depot]
-        random.shuffle(non_depots)
+        # random.shuffle(non_depots)
         result = []
         cycles = []
         cur_cycle = []

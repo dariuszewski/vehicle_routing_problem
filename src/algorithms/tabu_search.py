@@ -72,12 +72,26 @@ class TabuSearch():
                 # update current_best
                 if solution.total_length < self.current_best.total_length:
                     self.current_best = solution
+        return self.current_best
     
     def select_random_city(self, graph):
         choices = [node for node in graph if not node.is_depot]
         if choices:
             return random.choice(choices)
         
+    def to_fleet(self):
+        fleet = [Vehicle(i+1) for i in range(self.graph_manager.vehicles)]
+
+        cur_veh_idx = 0
+        for cycle in self.current_best.cycles:
+            fleet[cur_veh_idx].add_route(cycle)
+            if cur_veh_idx < self.graph_manager.vehicles-1:
+                cur_veh_idx += 1
+            else:
+                cur_veh_idx = 0
+        
+        return fleet
+
     def __str__(self):
         num_cities = len(self.graph_manager.node_list)
         num_depots = len([d for d in self.graph_manager.node_list if d.is_depot]) 

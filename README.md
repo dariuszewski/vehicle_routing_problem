@@ -1,5 +1,8 @@
 This repository implements metaheuristic solution to the 
-vehicle routing problem using simmulated anneling algorithm.
+vehicle routing problem using simmulated anneling and tabu search algorithm.
+
+## Demo
+https://github.com/dariuszewski/vehicle_routing_problem/blob/master/notebook.ipynb
 
 ## Input data 
 Project defines cites that have to be visited by algorithm in the `/data` directory. `orders_with_depots.csv` file contains list of the cities in the given format: 
@@ -7,23 +10,28 @@ Project defines cites that have to be visited by algorithm in the `/data` direct
 |------|-------|----------|-----------|---------|
 | Kraków  | 0   |    50.0619474   | 19.9368564 | True |
 
-where `orders` is the integer value between 0 (should be set for the depot) and 500.
+where `orders` cannot be larger than the maximal capacity.
 
 ## Usage
 Example could be found in `notebook.ipynb`. In a nutshell:
-1. Create city list using `CityList.from_csv("./data/<desired_file>.csv")`
-2. Create fleet using `Fleet` object.
-3. Create instance of `SimulatedAnnealing` class then run `optimzie()`
+1. Create a graph manager object using a file from `/data` directory. 
+2. Create an instance of `SimulatedAnnealing` or `TabuSearch` class then 
+3. Run `optimize()`
+4. Optionally, turn the algorithm instance to a fleet with `Algorithm.to_fleet()` and generate a graphical depiction with `utils.generate_nx_graph()`
 
-### Algorithm parameters
+### Simulated Annealing parameters
 
-- fleet - fleet of vehicles to be used for this problem
+- graph_manager - object which manages routes and solution
 - initial_temp - initial temperature for annealing process
 - epochs - number of epochs for annealing process
 - attempts - number of batches in epoch
 - cooling_rate - cooling rate for annealing proccess between 0 and 1
-- annealing_method - function for finding next city one of `random`, `nearest_neighbor` or `city_swap`
 
+### Tabu Search parameters
+
+- graph_manager - object which manages routes and solution
+- max_iterations - iterations to run by the algorithm
+- tabu_size - size of the tabu list
 
 ## Development
 Setup virtual environment for the project

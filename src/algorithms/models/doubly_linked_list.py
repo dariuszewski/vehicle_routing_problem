@@ -193,6 +193,14 @@ class DoublyLinkedList:
             node.next, node.prev = node.prev, node.next
         if nodes:
             self.head = nodes[-1]
+    
+    def swap_single_nodes(self, node1, node2):
+        node1.prev.next, node2.prev.next = node2.prev.next, node1.prev.next
+        node1.next.prev, node2.next.prev = node2.next.prev, node1.next.prev
+
+        node1.prev, node2.prev = node2.prev, node1.prev
+        node1.next, node2.next = node2.next, node1.next
+
             
 if __name__ == "__main__":
     # Load nodes from a file
@@ -253,6 +261,15 @@ if __name__ == "__main__":
     print(dll)
     dll.reverse()
     print(dll)
+
+    print('* Single Node Swap *')
+    print(dll)
+    print(new)
+    one = dll.get_node_by_name('Malbork')
+    two = new.get_node_by_name('Chrzanów')
+    dll.swap_single_nodes(one, two)
+    print(dll)
+    print(new)
 
 # class LinkedListsManager:
 #     def __init__(self, max_cap):

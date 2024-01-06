@@ -1,9 +1,11 @@
+import random
+
 try:
     from src.algorithms.models.doubly_linked_list import DoublyLinkedList
     from src.algorithms.models.node import Node, NodeList
 except:
-    from models.doubly_linked_list import DoublyLinkedList
-    from models.node import Node, NodeList
+    from doubly_linked_list import DoublyLinkedList
+    from node import Node, NodeList
 
 class GraphManager():
     def __init__(self, node_list, max_cap, vehicles) -> None:
@@ -26,6 +28,7 @@ class GraphManager():
 
     def create_cycles(self):
         non_depots = [node for node in self.node_list if not node.is_depot]
+        random.shuffle(non_depots)
         result = []
         cycles = []
         cur_cycle = []
@@ -55,7 +58,7 @@ class GraphManager():
             if node_name in cycle:
                 return cycle
     
-    def handle_swap(self, node1, node2):
+    def handle_swap(self, node1, node2, single_node=False):
         if node1.name == node2.name:
             cycle = self.get_cycle_by_node_name(node1.name)
             cycle.reverse()
@@ -65,14 +68,22 @@ class GraphManager():
             if cycle1 == cycle2:
                 cycle1.swap_nodes_by_name(node1.name, node2.name)
             else:
-                detached_1 = cycle1.remove(node1)
-                detached_2 = cycle2.remove(node2)
-                leftover_1 = cycle1.attach_sublist(detached_2)
-                leftover_2 = cycle2.attach_sublist(detached_1)
-                if leftover_1:
-                    self.cycles.append(leftover_1)
-                if leftover_2:
-                    self.cycles.append(leftover_2)
+                if single_node:
+                    print(node1)
+                    print(node2)
+                    print(cycle1)
+                    print(cycle2)
+                    cycle1.swap_nodes_by_name(node1, node2)
+                else:
+                    cycle1.swap_single_nodes(node1, node2)
+                    detached_1 = cycle1.remove(node1)
+                    detached_2 = cycle2.remove(node2)
+                    leftover_1 = cycle1.attach_sublist(detached_2)
+                    leftover_2 = cycle2.attach_sublist(detached_1)
+                    if leftover_1:
+                        self.cycles.append(leftover_1)
+                    if leftover_2:
+                        self.cycles.append(leftover_2)
 
     
     def __str__(self) -> str:

@@ -4,6 +4,58 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
 
+def generate_nx_graph(fleet):
+    # Create a new graph
+    plt.figure(figsize=(15, 8))
+    G = nx.Graph()
+
+    # Map for vehicle colors
+    vehicle_colors = {}
+    colors = ['blue', 'green', 'red', 'yellow', 'purple', 'orange', 'black']
+    color_index = 0
+
+    for vehicle in fleet:
+        # Assign a color for each vehicle
+        vehicle_color = colors[color_index % len(colors)]
+        vehicle_colors[vehicle] = vehicle_color
+        color_index += 1
+
+        for route in vehicle.routes:
+            previous_city = None
+            for city in route:
+                # Add node for each city with its geographical position
+                G.add_node(city.name, pos=(city.lon, city.lat), label=f"{city.name} ({city.weight})")
+
+                # Add edge if previous city exists
+                if previous_city:
+                    # Optionally, you can calculate the distance between cities to set as weight
+                    G.add_edge(previous_city.name, city.name, color=vehicle_color)
+                previous_city = city
+
+    # Position nodes based on geographical coordinates
+    pos = nx.get_node_attributes(G, 'pos')
+
+    # Draw the graph
+    # Draw nodes with positions
+    nx.draw_networkx_nodes(G, pos)
+
+    # Draw edges with different colors
+    for edge in G.edges(data=True):
+        nx.draw_networkx_edges(G, pos, edgelist=[(edge[0], edge[1])], edge_color=edge[2]['color'])
+
+    # Draw labels
+    nx.draw_networkx_labels(G, pos, {n: d['label'] for n, d in G.nodes(data=True)})
+
+    # Create a legend for vehicles
+    vehicle_legend = [plt.Line2D([0], [0], color=color, lw=4) for color in vehicle_colors.values()]
+    plt.legend(vehicle_legend, [f"V: {v.number}" for v in vehicle_colors.keys()], loc='upper left')
+
+    plt.axis('equal')  # Set equal scaling by x and y axes for correct geographical representation
+    plt.show()
+
+
+
+
 def generate_graph(orders_data, distance_matrix):
     """
     Creates a graph based on orders_data and distance matrix. Created graph

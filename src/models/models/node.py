@@ -70,6 +70,11 @@ class NodeList(Iterable):
         depot.next, depot.prev = None, None
         return depot
     
+    @property
+    def depot(self):
+        depots = [node for node in self._items if node.is_depot]
+        return copy.deepcopy(depots[0])
+    
     def __str__(self) -> str:
         return ('\n').join([str(item) for item in self._items])
 

@@ -116,6 +116,8 @@ class SimulatedAnnealing():
         fleet = copy.deepcopy(self.current_best)
         random_node1 = self.select_random_city(fleet)
         random_node2 = self.select_random_city(fleet)
+        print(random_node1)
+        print(random_node2)
         if random_node1 == random_node2:
             print('same nodes what to do')
             return fleet
@@ -155,10 +157,21 @@ if __name__ == "__main__":
     # print(data)
     SA = SimulatedAnnealing(fleet=graph, epochs=35, attempts=30 , initial_temp=1,
                             cooling_rate=0.9)
-    SA.optimize()
-    print(SA.initial_best.distance_covered)
-    print(SA.current_best_solution)
-    print(sum([len(item.to_list()) for item in SA.current_best.graphs]))
+    print(SA.fleet.graphs)
+    node1 = SA.select_random_city(SA.fleet)
+    print(node1)
+    node2 = SA.select_random_city(SA.fleet)
+    print(node2)
+    graph1 = SA.fleet.get_graph_by_node(node1.name)
+    graph2 = SA.fleet.get_graph_by_node(node2.name)
+    print(graph1)
+    print(graph2)
+    # print(SA.fleet.graphs)
+
+    # SA.optimize()
+    # print(SA.initial_best.distance_covered)
+    # print(SA.current_best_solution)
+    # print(sum([len(item.to_list()) for item in SA.current_best.graphs]))
     # for graph in SA.current_best.graphs:
     #     print(graph)
     #     print(graph.length)

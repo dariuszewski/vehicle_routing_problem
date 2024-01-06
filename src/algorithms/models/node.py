@@ -84,7 +84,7 @@ class NodeList(Iterable):
 
 if __name__ == "__main__":
     # Load nodes from a file
-    file_path = './temp/orders_with_depots.csv'
+    file_path = './data/orders_with_depots.csv'
     node_list = NodeList.from_flie(file_path)
 
     # Print all nodes

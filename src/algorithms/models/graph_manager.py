@@ -84,7 +84,7 @@ class GraphManager():
 
 if __name__ == '__main__':
     clm = GraphManager(
-        node_list='./temp/orders_with_depots.csv',
+        node_list='./data/orders_with_depots.csv',
         max_cap=1000,
         vehicles=5
     )

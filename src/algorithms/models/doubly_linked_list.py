@@ -196,7 +196,7 @@ class DoublyLinkedList:
             
 if __name__ == "__main__":
     # Load nodes from a file
-    file_path = './temp/orders_with_depots.csv'  # Replace with your actual file path
+    file_path = './data/orders_with_depots.csv'  # Replace with your actual file path
     node_list = NodeList.from_flie(file_path)
     cl = node_list[1:5]
     # creating

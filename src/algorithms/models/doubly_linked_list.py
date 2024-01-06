@@ -1,9 +1,10 @@
-from node import Node, NodeList
-from utils import haversine
+try:
+    from src.algorithms.models.node import Node, NodeList
+    from src.utils.haversine import haversine
+except:
+    from node import Node, NodeList
+    from haversine import haversine
 
-
-file_path = './temp/orders_with_depots.csv'  # Replace with your actual file path
-node_list = NodeList.from_flie(file_path)
 
 class DoublyLinkedList:
     def __init__(self, head, max_cap, node_list=None) -> None:

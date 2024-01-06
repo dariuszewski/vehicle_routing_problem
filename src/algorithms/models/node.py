@@ -2,7 +2,10 @@ import csv
 import copy
 from typing import List
 
-from iterable import Iterable
+try:
+    from src.algorithms.models.iterable import Iterable
+except:
+    from iterable import Iterable
 
 class Node:
     def __init__(self, 

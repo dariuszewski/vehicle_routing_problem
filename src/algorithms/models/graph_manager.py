@@ -1,5 +1,9 @@
-from doubly_linked_list import DoublyLinkedList
-from node import Node, NodeList
+try:
+    from src.algorithms.models.doubly_linked_list import DoublyLinkedList
+    from src.algorithms.models.node import Node, NodeList
+except:
+    from models.doubly_linked_list import DoublyLinkedList
+    from models.node import Node, NodeList
 
 class GraphManager():
     def __init__(self, node_list, max_cap, vehicles) -> None:
@@ -7,6 +11,11 @@ class GraphManager():
         self.max_cap = max_cap
         self.vehicles = vehicles
         self.cycles = self.create_cycles()
+        self.graphs = self.cycles
+
+    @property
+    def total_length(self):
+        return  sum([cycle.length for cycle in self.cycles])
     
 
     def create_node_list(self, node_list):
@@ -23,7 +32,6 @@ class GraphManager():
         for node in non_depots:
             cur_cycle_weight = sum([i.weight for i in cur_cycle])
             if self.max_cap >= cur_cycle_weight + node.weight:
-                print('adding', str(node))
                 cur_cycle.append(node)
             else:
                 cycles.append(cur_cycle)
@@ -93,7 +101,12 @@ if __name__ == '__main__':
     print(clm)
 
     print('handle different cycles')
-    node3 = clm.node_list.get_node_by_name('Białystok')
-    node4 = clm.node_list.get_node_by_name('Gliwice')
+    node3 = clm.node_list.get_node_by_name('Warszawa')
+    node4 = clm.node_list.get_node_by_name('Gdańsk')
     clm.handle_swap(node3, node4)
+    print(clm)
+
+    node5 = clm.node_list.get_node_by_name('Krosno')
+    node6 = clm.node_list.get_node_by_name('Puławy')
+    clm.handle_swap(node5, node6)
     print(clm)

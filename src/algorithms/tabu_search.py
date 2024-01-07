@@ -60,18 +60,18 @@ class TabuSearch():
             for tabu_entry in tabu_entries:
                 if tabu_entry in self.tabu_list:
                     continue
-            else:
-                # add tabu entry to tabu list
-                for tabu_entry in tabu_entries:
-                    self.tabu_list.append(tabu_entry)
-                # check if tabu is not full
-                while len(self.tabu_list) > self.tabu_size:
-                    self.tabu_list.pop(0)
-                # handle swap
-                solution.handle_swap(random_node1, random_node2, sn)
-                # update current_best
-                if solution.total_length < self.current_best.total_length:
-                    self.current_best = solution
+                else:
+                    # add tabu entry to tabu list
+                    for tabu_entry in tabu_entries:
+                        self.tabu_list.append(tabu_entry)
+                    # check if tabu is not full
+                    while len(self.tabu_list) > self.tabu_size:
+                        self.tabu_list.pop(0)
+                    # handle swap
+                    solution.handle_swap(random_node1, random_node2, sn)
+                    # update current_best
+                    if solution.total_length < self.current_best.total_length:
+                        self.current_best = solution
         return self.current_best
     
     def select_random_city(self, graph):
